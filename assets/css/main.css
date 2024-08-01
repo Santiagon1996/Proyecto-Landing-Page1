@@ -1,15 +1,4 @@
-/**
-* Template Name: UpConstruction
-* Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
-* Updated: Jun 29 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
-/*--------------------------------------------------------------
-# Font & Color Variables
-# Help: https://bootstrapmade.com/color-system/
---------------------------------------------------------------*/
 /* Fonts */
 :root {
   --default-font: "Open Sans",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -663,13 +652,15 @@ h6 {
 --------------------------------------------------------------*/
 .page-title {
   color: var(--default-color);
-  background-color: var(--background-color);
-  background-size: cover;
+  background-image: url('.page-title');
+    background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   padding: 160px 0 60px 0;
   text-align: center;
   position: relative;
+  z-index: 1;
+  background-attachment: fixed;
 }
 
 .page-title:before {
@@ -677,6 +668,7 @@ h6 {
   background-color: color-mix(in srgb, var(--background-color), transparent 40%);
   position: absolute;
   inset: 0;
+  z-index: -1;
 }
 
 .page-title h1 {
@@ -766,6 +758,15 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+
+
+#animatedText {
+  transition: color 0.3s ease;
+}
+
+#animatedText:hover {
+  color: #16BAC5;
+}
 .hero {
   width: 100%;
   min-height: 100vh;
@@ -1721,7 +1722,13 @@ section,
   object-fit: cover;
   object-position: center;
   z-index: 1;
+  transition: transform 0.3s ease-in-out; /* Agrega una transición suave al transform */
 }
+
+.about .about-img:hover img {
+  transform: scale(1.05); /* Aumenta el tamaño de la imagen al pasar el cursor */
+}
+
 
 /*--------------------------------------------------------------
 # Stats Counter Section
@@ -2689,9 +2696,9 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
+/* .starter-section {
+  /* Add your styles here 
+} */
 
 /*--------------------------------------------------------------
 # Widgets
@@ -2868,3 +2875,87 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 60%);
   font-size: 14px;
 }
+
+/*--------------------------------------------------------------
+# Proyectos Section
+--------------------------------------------------------------*/
+
+
+
+/* ANIME SECCIONES */
+#animateMe span {
+  display: inline-block;
+  font-size: 2rem;
+  animation: wave-text 1.4s ease-in-out infinite;
+}
+
+#animateMe span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+#animateMe span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+#animateMe span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+#animateMe span:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+#animateMe span:nth-child(6) {
+  animation-delay: 0.5s;
+}
+
+#animateMe span:nth-child(7) {
+  animation-delay: 0.6s;
+}
+#animateMe span:nth-child(8) {
+  animation-delay: 0.7s;
+}
+#animateMe span:nth-child(9) {
+  animation-delay: 0.8s;
+}
+#animateMe span:nth-child(10) {
+  animation-delay: 0.9s;
+}
+#animateMe span:nth-child(11) {
+  animation-delay: 0.10s;
+}
+#animateMe span:nth-child(12) {
+  animation-delay: 0.11s;
+}
+#animateMe span:nth-child(13) {
+  animation-delay: 0.12s;
+}
+#animateMe span:nth-child(14) {
+  animation-delay: 0.13s;
+}
+#animateMe span:nth-child(15) {
+  animation-delay: 0.14s;
+}
+#animateMe span:nth-child(16) {
+  animation-delay: 0.15s;
+}
+#animateMe span:nth-child(14) {
+  animation-delay: 0.13s;
+}
+/* Continúa con el resto de las letras, ajustando el retraso según sea necesario */
+
+@keyframes wave-text {
+  0% {
+    transform: translateY(0rem);
+  }
+  55% {
+    transform: translateY(-1.5rem);
+  }
+  100% {
+    transform: translateY(0rem);
+  }
+}
+
+
+
+/*  */
