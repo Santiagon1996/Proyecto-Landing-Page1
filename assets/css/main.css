@@ -416,17 +416,17 @@ h6 {
   font-family: var(--heading-font);
 }
 
-.footer .social-links a {
+.social-links a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 35px; /* Ajuste para pantallas más pequeñas */
+  height: 35px;
   border-radius: 5px;
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
-  font-size: 16px;
+  font-size: 14px; /* Ajuste para mejorar la legibilidad */
   color: color-mix(in srgb, var(--default-color), transparent 20%);
-  margin-right: 10px;
+  margin-right: 8px; /* Ajuste para mejorar el espaciado */
   transition: 0.3s;
 }
 
@@ -495,6 +495,21 @@ h6 {
 .footer .credits {
   margin-top: 8px;
   font-size: 13px;
+}
+/* Uso de media queries para dispositivos móviles */
+@media (max-width: 768px) {
+  .footer .footer-top {
+    padding-top: 30px; /* Reducción del espaciado en pantallas pequeñas */
+  }
+
+  .footer .footer-links,
+  .footer .footer-about {
+    display: none; /* Ocultar las secciones "Useful Links" y "Our Services" en móviles */
+  }
+
+  .footer .footer-about .logo img {
+    max-height: 100px; /* Ajuste para el logo en móviles */
+  }
 }
 
 /*--------------------------------------------------------------
@@ -579,8 +594,7 @@ h6 {
 --------------------------------------------------------------*/
 .page-title {
   color: var(--default-color);
-  background-image: url('.page-title');
-    background-size: cover;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   padding: 160px 0 60px 0;
@@ -628,6 +642,15 @@ h6 {
   color: color-mix(in srgb, var(--default-color), transparent 20%);
 }
 
+/* Ajustes para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .page-title {
+    background-size: 150%; /* Aumenta el tamaño de la imagen para cubrir mejor pantallas más pequeñas */
+    background-position: center center; /* Asegura que el centro de la imagen siempre sea visible */
+    padding: 80px 0 30px 0; /* Reduce el padding para adaptarse a pantallas más pequeñas */
+    background-attachment: scroll; /* Cambia a scroll para permitir que el fondo se desplace con la página */
+  }
+}
 /*--------------------------------------------------------------
 # Global Sections
 --------------------------------------------------------------*/
@@ -645,6 +668,11 @@ section,
   section,
   .section {
     scroll-margin-top: 76px;
+  }
+  /* VER */
+  .scroll-top {
+    right: 10px; /* Ajustar para asegurar que no cause desbordamiento */
+    bottom: 10px; /* Ajustar para asegurar que no cause desbordamiento */
   }
 }
 
@@ -856,216 +884,6 @@ section,
   opacity: 0.9;
 }
 
-/*--------------------------------------------------------------
-# Get Started Section
---------------------------------------------------------------*/
-/* .get-started .content {
-  padding: 30px 0;
-}
-
-.get-started .content h3 {
-  font-size: 36px;
-  font-weight: 600;
-  margin-bottom: 25px;
-  padding-bottom: 25px;
-  position: relative;
-}
-
-.get-started .content h3:after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 60px;
-  height: 4px;
-  background: var(--accent-color);
-  left: 0;
-  bottom: 0;
-}
-
-.get-started .content p {
-  font-size: 14px;
-}
-
-.get-started .php-email-form {
-  background: color-mix(in srgb, var(--default-color), transparent 97%);
-  padding: 30px;
-  height: 100%;
-}
-
-@media (max-width: 575px) {
-  .get-started .php-email-form {
-    padding: 20px;
-  }
-}
-
-.get-started .php-email-form h3 {
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.get-started .php-email-form p {
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-
-.get-started .php-email-form input[type=text],
-.get-started .php-email-form input[type=email],
-.get-started .php-email-form textarea {
-  font-size: 14px;
-  padding: 10px 15px;
-  box-shadow: none;
-  border-radius: 0;
-  color: var(--default-color);
-  background-color: color-mix(in srgb, var(--background-color), transparent 20%);
-  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
-}
-
-.get-started .php-email-form input[type=text]:focus,
-.get-started .php-email-form input[type=email]:focus,
-.get-started .php-email-form textarea:focus {
-  border-color: var(--accent-color);
-}
-
-.get-started .php-email-form input[type=text]::placeholder,
-.get-started .php-email-form input[type=email]::placeholder,
-.get-started .php-email-form textarea::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
-}
-
-.get-started .php-email-form button[type=submit] {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  border: 0;
-  padding: 10px 30px;
-  transition: 0.4s;
-  border-radius: 4px;
-}
-
-.get-started .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
-} */
-
-/*--------------------------------------------------------------
-# Constructions Section
---------------------------------------------------------------*/
-/* .constructions .card-item {
-  background-color: var(--surface-color);
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
-  position: relative;
-  border-radius: 0;
-}
-
-.constructions .card-item .card-bg {
-  min-height: 300px;
-  position: relative;
-}
-
-.constructions .card-item .card-bg img {
-  position: absolute;
-  inset: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  z-index: 1;
-}
-
-.constructions .card-item .card-body {
-  padding: 30px;
-}
-
-.constructions .card-item h4 {
-  font-weight: 700;
-  font-size: 20px;
-  margin-bottom: 15px;
-}
-
-.constructions .card-item p {
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-  margin: 0;
-} */
-
-/*--------------------------------------------------------------
-# Services Section
---------------------------------------------------------------*/
-/* .services .service-item {
-  background-color: var(--surface-color);
-  padding: 40px;
-  box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
-  height: 100%;
-}
-
-.services .service-item .icon {
-  width: 48px;
-  height: 48px;
-  position: relative;
-  margin-bottom: 50px;
-}
-
-.services .service-item .icon i {
-  color: var(--heading-color);
-  font-size: 56px;
-  transition: ease-in-out 0.3s;
-  z-index: 2;
-  position: relative;
-}
-
-.services .service-item .icon:before {
-  position: absolute;
-  content: "";
-  height: 100%;
-  width: 100%;
-  background: color-mix(in srgb, var(--heading-color), transparent 95%);
-  border-radius: 50px;
-  z-index: 1;
-  top: 10px;
-  right: -20px;
-  transition: 0.3s;
-}
-
-.services .service-item h3 {
-  color: color-mix(in srgb, var(--heading-color), transparent 20%);
-  font-weight: 700;
-  margin: 0 0 20px 0;
-  padding-bottom: 8px;
-  font-size: 22px;
-  position: relative;
-  display: inline-block;
-  border-bottom: 4px solid color-mix(in srgb, var(--heading-color), transparent 90%);
-  transition: 0.3s;
-}
-
-.services .service-item p {
-  line-height: 24px;
-  font-size: 14px;
-  margin-bottom: 0;
-}
-
-.services .service-item .readmore {
-  margin-top: 15px;
-  display: inline-block;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-}
-
-.services .service-item:hover .icon i {
-  color: var(--heading-color);
-}
-
-.services .service-item:hover .icon:before {
-  background: var(--accent-color);
-}
-
-.services .service-item:hover h3 {
-  border-color: var(--accent-color);
-  color: var(--heading-color);
-}
-
-.services .service-item:hover .readmore {
-  color: var(--accent-color);
-} */
 
 /*--------------------------------------------------------------
 # Alt Services Section
@@ -1106,6 +924,11 @@ section,
 
 .alt-services .icon-box {
   margin-top: 50px;
+  padding: 20px; /* Agrega un padding alrededor del contenido de la tarjeta */
+  background-color: var(--surface-color); /* Define el color de fondo de la tarjeta */
+  border-radius: 10px; /* Bordes redondeados para la tarjeta */
+  box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para el efecto hover */
 }
 
 .alt-services .icon-box i {
@@ -1118,10 +941,12 @@ section,
   font-size: 28px;
   width: 56px;
   height: 56px;
-  border-radius: 4px;
-  line-height: 0;
-  box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.1);
-  transition: 0.3s;
+  border-radius: 50%; /* Hace los íconos completamente redondos */
+  box-shadow: none; /* Elimina la sombra del ícono para mantener el estilo limpio */
+}
+.alt-services .icon-box:hover {
+  transform: translateY(-5px); /* Levanta un poco la tarjeta al pasar el mouse */
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.2); /* Aumenta la sombra para darle más profundidad */
 }
 
 .alt-services .icon-box:hover i {
@@ -1357,7 +1182,7 @@ section,
 /*--------------------------------------------------------------
 # Testimonials Section
 --------------------------------------------------------------*/
-.testimonials .testimonial-wrap {
+/* .testimonials .testimonial-wrap {
   padding-left: 50px;
 }
 
@@ -1471,7 +1296,7 @@ section,
     position: static;
     left: auto;
   }
-}
+} */
 
 
 /*--------------------------------------------------------------
@@ -1992,6 +1817,23 @@ section,
 }
 
 
+/* MEJORA DEL MAPA */
+.map-responsive {
+  position: relative; /* Establece la posición relativa para el contenedor */
+  overflow: hidden; /* Oculta cualquier contenido que exceda los límites del contenedor */
+  padding-bottom: 75%; /* Establece el aspecto deseado para el mapa, en este caso, un cuadrado de 4:3 */
+  height: 0; /* Altura inicialmente establecida en 0 para evitar espacio extra antes de que el contenido se cargue */
+}
+
+.map-responsive iframe {
+  position: absolute; /* Posiciona absolutamente el iframe dentro del contenedor */
+  top: 0;
+  left: 0;
+  width: 100%; /* Ocupa todo el ancho disponible */
+  height: 100%; /* Ocupa todo el alto disponible */
+}
+
+
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
@@ -2181,6 +2023,13 @@ section,
   animation: wave-text 1.4s ease-in-out infinite;
 }
 
+/* Estilos para pantallas menores a 600px */
+@media screen and (max-width: 600px) {
+  #animateMe span {
+    font-size: 1rem; /* Tamaño de fuente reducido */
+  }
+}
+
 #animateMe span:nth-child(2) {
   animation-delay: 0.1s;
 }
@@ -2250,4 +2099,65 @@ section,
 
 
 
-/*  */
+/* Tecnologias Seccion */
+
+/* Estilos generales para las tarjetas */
+.icon-box-t {
+  display: flex; /* Habilita Flexbox */
+  flex-direction: column; /* Organiza los elementos en columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+  justify-content: center; /* Centra los elementos verticalmente */
+  text-align: center; /* Centra el texto horizontalmente */
+  background-color: #fff; /* Color de fondo de las tarjetas */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra detrás de las tarjetas */
+  padding: 20px;
+  margin: 20px;
+  transition: transform 0.3s ease; /* Transición para el efecto hover */
+
+}
+
+/* Estilos para los iconos dentro de las tarjetas */
+.icon-box-t .icon {
+  display: flex; /* Habilita Flexbox para centrar el icono */
+  justify-content: center; /* Centra el icono horizontalmente */
+  align-items: center; /* Centra el icono verticalmente */
+
+}
+
+/* Estilos para los iconos dentro de las tarjetas */
+.icon-box-t .icon i {
+  font-size: 48px; /* Tamaño de los iconos */
+  color: var(--accent-color); /* Color de los iconos */
+
+  
+}
+
+/* Efecto hover para las tarjetas */
+.icon-box-t:hover {
+  transform: translateY(-10px); /* Levanta un poco la tarjeta al pasar el mouse */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Aumenta la sombra para darle más profundidad */
+
+}
+
+/* Estilos para los títulos de las tarjetas */
+.icon-box-t h4 {
+  margin-top: 20px;
+  font-size: 24px; /* Tamaño del texto */
+  font-weight: 700; /* Grosor del texto */
+  color: #333; /* Color del texto */
+
+}
+
+/* Estilos para los enlaces dentro de los títulos */
+.icon-box-t h4 a {
+  color: #333; /* Color del texto de los enlaces */
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  transition: 0.3s; /* Transición para el efecto hover */
+
+}
+
+/* Cambia el color del texto al pasar el mouse sobre los enlaces */
+.icon-box-t h4 a:hover {
+  color: var(--accent-color); /* Color al pasar el mouse */
+}

@@ -1,10 +1,4 @@
-/**
-* Template Name: UpConstruction
-* Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
-* Updated: Jun 29 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 
 (function() {
   "use strict";
@@ -113,34 +107,38 @@
    * Init isotope layout and filters
    */
   document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
-    let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
-    let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
-    let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
-
+    let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry'; // Cambio no necesario, pero se mantiene por claridad
+    let filter = isotopeItem.getAttribute('data-default-filter') ?? '*'; // Cambio no necesario, pero se mantiene por claridad
+    let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order'; // Cambio no necesario, pero se mantiene por claridad
+  
     let initIsotope;
     imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
-      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
+      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), { // Cambio: Se mantiene igual
         itemSelector: '.isotope-item',
         layoutMode: layout,
         filter: filter,
         sortBy: sort
       });
     });
-
+  
     isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
       filters.addEventListener('click', function() {
-        isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
-        this.classList.add('filter-active');
-        initIsotope.arrange({
+        let currentActiveFilter = isotopeItem.querySelector('.isotope-filters .filter-active'); // Cambio: Se guarda en variable para mejorar legibilidad
+        if (currentActiveFilter) { // Cambio: Se verifica si existe antes de intentar remover clase
+          currentActiveFilter.classList.remove('filter-active');
+        }
+        this.classList.add('filter-active'); // Cambio: Se mantiene igual
+        initIsotope.arrange({ // Cambio: Se mantiene igual
           filter: this.getAttribute('data-filter')
         });
-        if (typeof aosInit === 'function') {
+        if (typeof aosInit === 'function') { // Cambio: Se mantiene igual
           aosInit();
         }
       }, false);
     });
-
+  
   });
+  
 
   /**
    * Init swiper sliders
